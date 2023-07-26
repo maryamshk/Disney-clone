@@ -2,44 +2,44 @@ import React from "react";
 import styled from "styled-components";
 
 function Header() {
-    return (
-        <Nav>
-            <Logo src="/images/logo.svg"></Logo>
-            <NavMenu>
-                <a>
-                    <img src="images/home-icon.svg"></img>
-                    <span>HOME</span>
-                </a>
+  return (
+    <Nav>
+      <Logo src="/images/logo.svg"></Logo>
+      <NavMenu>
+        <a>
+          <img src="images/home-icon.svg"></img>
+          <span>HOME</span>
+        </a>
 
-                <a>
-                    <img src="images/search-icon.svg"></img>
-                    <span>SEARCH</span>
-                </a>
+        <a>
+          <img src="images/search-icon.svg"></img>
+          <span>SEARCH</span>
+        </a>
 
-                <a>
-                    <img src="images/watchlist-icon.svg"></img>
-                    <span>WATCH LIST</span>
-                </a>
+        <a>
+          <img src="images/watchlist-icon.svg"></img>
+          <span>WATCH LIST</span>
+        </a>
 
-                <a>
-                    <img src="images/original-icon.svg"></img>
-                    <span>ORIGINALS</span>
-                </a>
+        <a>
+          <img src="images/original-icon.svg"></img>
+          <span>ORIGINALS</span>
+        </a>
 
-                <a>
-                    <img src="images/movie-icon.svg"></img>
-                    <span>MOVIES</span>
-                </a>
+        <a>
+          <img src="images/movie-icon.svg"></img>
+          <span>MOVIES</span>
+        </a>
 
-                <a>
-                    <img src="images/series-icon.svg"></img>
-                    <span>SERIES</span>
-                </a>
-            </NavMenu>
+        <a>
+          <img src="images/series-icon.svg"></img>
+          <span>SERIES</span>
+        </a>
+      </NavMenu>
 
-            <UserImg src="images/group-icon.png"></UserImg>
-        </Nav>
-    );
+      <UserImg src="images/group-icon.png"></UserImg>
+    </Nav>
+  );
 }
 
 export default Header;
@@ -50,6 +50,8 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   padding: 0 36px;
+  overflow-x:hidden;
+
 `;
 
 const Logo = styled.img`
