@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import Detail from './components/Detail';
+import Login from './components/Login';
 
 
 import {
@@ -26,7 +27,10 @@ function App() {
 
           {/* anything inside switch can always be changed */}
 
+          <Route path="/login">
+            <Route path='/login' element={<Login />} />
 
+          </Route>
 
           <Route path="/detail">
             <Route path='/detail' element={<Detail />} />
