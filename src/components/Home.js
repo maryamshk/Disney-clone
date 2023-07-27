@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from "styled-components";
 import ImgSlider from './ImgSlider';
 import Viewers from './Viewers';
 import Movies from './Movies';
+import db from '../firebase';
+
 
 
 function Home() {
+
+    useEffect(() => {          //its going to run when home component is running
+        const q = query(collection(db, "movies"))
+        onSnapshot(q, (querySnapshot) => {
+            let tempMovies = querySnapshot.docs.map((doc) => {
+                return { id: doc.id, ...doc.data() }   //unpacking object and putting it in another object returning
+            })
+            // dispatch(setMovies(tempMovies))
+        });
+    })
+
     return (
         <Container>
             <ImgSlider />
@@ -21,8 +34,8 @@ export default Home
 const Container = styled.main`
     min-height: calc(100vh - 70px);
     padding: 0 calc(3.5vw + 5px);
-    position:relative;
-    overflow-x:hidden;
+    position: relative;
+    overflow-x: hidden;
 
 
 &:before{
