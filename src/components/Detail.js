@@ -30,7 +30,13 @@ function Detail() {
                 </GroupWatchButton>
             </Controls>
 
+            <SubTitle>
+                2018 - 7m - Family, Fantasy, Kids, Animation
+            </SubTitle>
 
+            <Description>
+                The short film begins when Mrs. Li is preparing a traditional Chinese dumpling for dinner. To her surprise, the dumpling comes to life, becoming a cute, little dumpling baby. Mrs. Li raises the dumpling child as her own, caring for it as a real baby through various stages of life, from infancy to adolescence.
+            </Description>
         </Container>
     )
 }
@@ -136,3 +142,18 @@ const AddButton = styled.button`
 const GroupWatchButton = styled(AddButton)`
     background: rgba(0, 0, 0, 0.9);
 `
+
+const SubTitle = styled.div`
+    font-size: 15px;
+    color: rgba(249, 249, 249);
+    min-height: 20px;
+    margin-top: 26px;
+`
+
+const Description = styled.div`
+    font-size: 20px;
+    margin-top: 16px;
+    max-width: 700px;
+    color: rgba(249, 249, 249);
+`
+

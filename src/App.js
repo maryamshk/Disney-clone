@@ -26,6 +26,8 @@ function App() {
 
           {/* anything inside switch can always be changed */}
 
+
+
           <Route path="/detail">
             <Route path='/detail' element={<Detail />} />
 
