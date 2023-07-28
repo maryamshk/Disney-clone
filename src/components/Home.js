@@ -6,20 +6,23 @@ import Movies from './Movies';
 import db from '../firebase';
 import { onSnapshot, collection, query } from "firebase/firestore";
 import { useDispatch } from 'react-redux'; //for calling action
+
 import { setMovies } from '../features/movie/movieSlice';
 
 
 
 
 function Home() {
+    const dispatch = useDispatch();
 
-    useEffect(() => {          //its going to run when home component is running
+
+    useEffect(() => {                            //its going to run when home component is running
         const q = query(collection(db, "movies"))
         onSnapshot(q, (querySnapshot) => {
             let tempMovies = querySnapshot.docs.map((doc) => {
                 return { id: doc.id, ...doc.data() }   //unpacking object and putting it in another object returning
             })
-            // dispatch(setMovies(tempMovies))
+            dispatch(setMovies(tempMovies))
         });
     })
 

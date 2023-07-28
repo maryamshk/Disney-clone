@@ -4,7 +4,6 @@ import { getAuth } from 'firebase/auth';
 import { GoogleAuthProvider } from "firebase/auth";
 import { getStorage } from 'firebase/storage';
 
-// gives access to actual database
 const firebaseConfig = {
     apiKey: "AIzaSyAYYTMJ5f542MM3RxNLz0hsXVY0fihyQl4",
     authDomain: "disney-plus-unofficial.firebaseapp.com",
@@ -15,8 +14,8 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
-const db = getFirestore();  //firebase actual db
-const auth = getAuth();    //to login and logout
+const db = getFirestore();
+const auth = getAuth();
 const provider = new GoogleAuthProvider();
 const storage = getStorage();
 

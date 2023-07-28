@@ -1,43 +1,30 @@
 import React from 'react'
 import styled from "styled-components"
+import { selectMovies } from '../features/movie/movieSlice';   //gettin us movie state
+import { useSelector } from 'react-redux';
+
+
 
 function Movies() {
+
+    // grabbing those movies
+    // we grabbed data from home component db, we used redux to save movies in like store, then grabbed it from store
+    const movies = useSelector(selectMovies);
+
     return (
         <Container>
             <h4>Recommended for You</h4>
 
             <Content>
-                <Wrap>
-                    <img src="/images/slider-badging.jpg" />
-                </Wrap>
-
-                <Wrap>
-                    <img src="/images/slider-badging.jpg" />
-                </Wrap>
-
-                <Wrap>
-                    <img src="/images/slider-badging.jpg" />
-                </Wrap>
-
-                <Wrap>
-                    <img src="/images/slider-badging.jpg" />
-                </Wrap>
-
-                <Wrap>
-                    <img src="/images/slider-badging.jpg" />
-                </Wrap>
-
-                <Wrap>
-                    <img src="/images/slider-badging.jpg" />
-                </Wrap>
-
-                <Wrap>
-                    <img src="/images/slider-badging.jpg" />
-                </Wrap>
-
-                <Wrap>
-                    <img src="/images/slider-badging.jpg" />
-                </Wrap>
+                {/* if movies exist */}
+                {movies &&
+                    // looping through movie
+                    movies.map((movie) => (
+                        <Wrap>
+                            <img src={movie.cardImg} alt="Movies" />
+                        </Wrap>
+                    ))
+                }
 
             </Content>
 
