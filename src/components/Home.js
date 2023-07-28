@@ -4,6 +4,10 @@ import ImgSlider from './ImgSlider';
 import Viewers from './Viewers';
 import Movies from './Movies';
 import db from '../firebase';
+import { onSnapshot, collection, query } from "firebase/firestore";
+import { useDispatch } from 'react-redux'; //for calling action
+import { setMovies } from '../features/movie/movieSlice';
+
 
 
 
